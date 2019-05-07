@@ -1,0 +1,11 @@
+{
+    "type": "object",
+    "properties": {
+        "page": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 1
+        }
+    }
+}

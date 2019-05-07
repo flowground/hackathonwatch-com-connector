@@ -1,0 +1,97 @@
+{
+    "title": "HackathonWatch",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/hackathonwatch.com/0.1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://www.hackathonwatch.com/api/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "GET_hackathons_coming___format_": {
+            "main": "./lib/actions/GET_hackathons_coming___format_.js",
+            "title": "Return a list of coming hackathons",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_hackathons_coming___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_hackathons__id___format_": {
+            "main": "./lib/actions/GET_hackathons__id___format_.js",
+            "title": "Return the detail of a given hackathon",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_hackathons__id___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_swagger_doc___format_": {
+            "main": "./lib/actions/GET_swagger_doc___format_.js",
+            "title": "Swagger compatible API description",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_swagger_doc___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_swagger_doc__name___format_": {
+            "main": "./lib/actions/GET_swagger_doc__name___format_.js",
+            "title": "Swagger compatible API description for specific API",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_swagger_doc__name___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
